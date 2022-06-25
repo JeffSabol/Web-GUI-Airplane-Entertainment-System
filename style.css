@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .navbar-nav {
+    float:none;
+    margin:0 auto;
+    display: block;
+    text-align: center;
+  }
+  
+  .navbar-nav > li {
+    display: inline-block;
+    float:none;
+    border-color: gray;
+    border-style: solid;
+  }
+  
+  .navbar-brand{
+    border-color: gray;
+    border-style: solid;
+    padding: 1em;
+  }
+  
+  .main-menu{
+    border-width: 0.25em;
+    border-color:black;
+    border-style: solid;
+    padding-top: 1em;
+  }
+  
+  .row{
+    text-align: center;
+    outline: 1px solid gray;
+    font-size: 24px;
+  }
+  
+  .col-sm-4{
+    outline: 1px solid gray;
+  }
+  
+  img{
+    padding:5px;
+  }
+  
+  .prompt-button {
+    float: center;
+    color: white;
+    font-size: 40px;
+    width: 60%;
+  }
