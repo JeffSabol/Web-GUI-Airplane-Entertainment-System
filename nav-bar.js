@@ -11,7 +11,7 @@ var htmlString = '\
 <div class="collapse navbar-collapse navbar-inner" id="collapsibleNavbar">\
   <ul class="nav navbar-nav">\
     <li class="nav-item">\
-      <a class="nav-link" href="#">\
+      <a class="nav-link" href="declare-emergency.html">\
         Emergency <br>\
         <img src="https://iili.io/hDyG7j.md.png" alt="emergency image" width="50" height="50">\
       </a>\
@@ -41,4 +41,8 @@ var htmlString = '\
 
 $(document).ready(function() {
   document.getElementById("nav-bar").innerHTML = htmlString;
+  $(".exit-button").html("X");
+  $(".exit-button").click(function() {
+    history.back();
+  });
 });
