@@ -1,7 +1,9 @@
 .food-row{
-    outline:none;
-  }
-  
-  .food-column{
-    outline:none;
-  }
+  outline:none;
+  align-content: left;
+}
+
+.food-column{
+  outline:none;
+  align-content: left;
+}

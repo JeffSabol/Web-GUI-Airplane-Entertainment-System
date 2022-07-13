@@ -4,13 +4,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
-  <title>Main Menu</title>
+  <title>Food Menu</title>
   <link href="style.css" rel="stylesheet" type="text/css" />
   <link href="foodstyles.css" rel="stylesheet" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="food-menu.js"></script>
 </head>
 
 <body>
@@ -24,46 +26,317 @@
 
   <!--Header at the top of the menu-->
   <div class="container main-menu">
+
+    <!--Header row to sit atop the entire menu-->
     <div class="row">
       <div class="col-sm-12"><h1>Food and Drinks Menu</h1></div>
     </div>
 
+    <!--Header row to sit atop the drinks-->
+    <div class="row food-row">
+      <div class="col-sm-6"><h3>Non-alcoholic drinks</h1></div>
+      <div class="col-sm-6"><h3>Alcoholic drinks</h1></div>
+    </div>
+    
     <!--First row is for drinks-->
-    <div class="row">
-      
-      <!--Column for non-alcoholic drinks-->
-      <div class = "col-sm-6">
-        <h3>Non-alcoholic Beverages:</h3>
-
-        <!--Drink item-->
+    <div class="row food-row">
+      <!--Column 1 for non-alcoholic drinks-->
+      <div class="col-sm-6">
+        <!--Item: Milk-->
         <div class="row food-row">
           <!--Item Name-->
           <div class="col-sm-4 food-column">Milk</div>
           <!--Item Price-->
-          <div class="col-sm-2">$5</div>
-          <!--Minus Button-->
-          <div class="col-sm-1">
-            <button>-</button>
-          </div>
+          <div class="col-sm-1">$3</div>
           <!--Current Quantity-->
-          <div class="col-sm-2">0</div>
-          <!--Plus Button-->
-          <div class="col-sm-1">
-            <button>+</button>
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Milk');" value="-">
+            <input type="number" id="Milk" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Milk');" value="+">
           </div>
-          
         </div>
-        
+        <!--Add additional items here:-->
+        <!--Item: Water-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Water</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$3</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Water');" value="-">
+            <input type="number" id="Water" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Water');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here:-->
+        <!--Item: Cola-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Cola</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$4</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Cola');" value="-">
+            <input type="number" id="Cola" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Cola');" value="+">
+          </div>
+        </div>
       </div>
 
-      <!--Column for alcoholic drinks-->
-      <div class = "col-sm-6">
-        <h3>Alcoholic Beverages:</h3>
+      <!--Column 2 for Alcoholic drinks-->
+      <div class="col-sm-6">
+        <!--Item: White Claw-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">White Claw</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$5</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('White_Claw');" value="-">
+            <input type="number" id="White_Claw" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('White_Claw');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here-->
+        <!--Item: Bud Light-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Bud Light</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$5</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Bud_Light');" value="-">
+            <input type="number" id="Bud_Light" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Bud_Light');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here-->
+        <!--Item: Red Wine-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Red Wine</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$7</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Red_Wine');" value="-">
+            <input type="number" id="Red_Wine" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Red_Wine');" value="+">
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+    <!--Header row to sit atop the food-->
+    <br>
+    <div class="row food-row">
+      <div class="col-sm-6"><h3>Appetizers/Sides</h1></div>
+      <div class="col-sm-6"><h3>Entrees</h1></div>
+    </div>
+
+    <!--First row is for Appetizers/Sides-->
+    <div class="row food-row">
+      <!--Column 1 for non-alcoholic drinks-->
+      <div class="col-sm-6">
+        <!--Item: Caesar Salad-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Caesar Salad</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$4</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Caesar_Salad');" value="-">
+            <input type="number" id="Caesar_Salad" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Caesar_Salad');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here:-->
+        <!--Item: Soup-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Crab Soup</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$4</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Crab_Soup');" value="-">
+            <input type="number" id="Crab_Soup" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Crab_Soup');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here:-->
+        <!--Item: Bread Sticks-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Bread Sticks</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$6</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Bread_Sticks');" value="-">
+            <input type="number" id="Bread_Sticks" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Bread_Sticks');" value="+">
+          </div>
+        </div>
+      </div>
+
+      <!--Column 2 for Entrees-->
+      <div class="col-sm-6">
+        <!--Item: White Claw-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Club Sandwich</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$7</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Club_Sandwich');" value="-">
+            <input type="number" id="Club_Sandwich" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Club_Sandwich');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here-->
+        <!--Item: Pizza-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Pizza</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$8</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Pizza');" value="-">
+            <input type="number" id="Pizza" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Pizza');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here-->
+        <!--Item: Chicken strips-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Chicken Strips</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$7</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Chicken_Strips');" value="-">
+            <input type="number" id="Chicken_Strips" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Chicken_Strips');" value="+">
+          </div>
+        </div>
+      </div>
+    
+    </div>
+
+
+    <!--Header row to sit atop the snacks and checkout-->
+    <br>
+    <div class="row food-row">
+      <div class="col-sm-6"><h3>Snacks</h1></div>
+      <div class="col-sm-6"><h3>Checkout</h1></div>
+    </div>
+
+    <!--First row is for Snacks and Checkout-->
+    <div class="row food-row">
+      <!--Column 1 for snacks-->
+      <div class="col-sm-6">
+        <!--Item: Caesar Salad-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Peanuts</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$2</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Peanuts');" value="-">
+            <input type="number" id="Peanuts" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Peanuts');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here:-->
+        <!--Item: Chips-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Chips</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$2</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Chips');" value="-">
+            <input type="number" id="Chips" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Chips');" value="+">
+          </div>
+        </div>
+        <!--Add additional items here:-->
+        <!--Item: Pretzels-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-4 food-column">Pretzels</div>
+          <!--Item Price-->
+          <div class="col-sm-1">$2</div>
+          <!--Current Quantity-->
+          <div class="col-sm-4 food-column" text-align="center">
+            <input type="button" onclick="decrementValue('Pretzels');" value="-">
+            <input type="number" id="Pretzels" style="width:2em" value="0" min="0"> 
+            <input type="button" onclick="incrementValue('Pretzels');" value="+">
+          </div>
+        </div>
+      </div>
+
+      <!--Column 2 is for the checkout button-->
+      <div class="col-sm-6">
+        <!--Item: Total Display-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-6 food-column">
+            <p>Total: </p>
+            <!-- <button onclick="calcTotal();">Update Total:</button> -->
+          </div>
+          <!--Display the total here-->
+          <div class="col-sm-1" id="totalDisplay"></div>
+        </div>
+        <!--Item: Checkout Display-->
+        <div class="row food-row">
+          <!--Item Name-->
+          <div class="col-sm-6 food-column">Checkout</div>
+          <!--Display the total here-->
+          <div class="col-sm-2">
+            <a href="food-order-confirmation.html">
+            <button>
+              <img src="https://iili.io/j7OYKu.png" 
+              alt="cart button" width="50" height="50">
+            </button>
+          </a>
+          </div>
+        </div>
+    
       </div>
     </div>
-    
-
-  <script src="script.js"></script>
+    <br>
+    <hr>
+    <br>
+    <!--Cancel and clear buttons here-->
+    <div class="row food-row">
+      <div class="col-sm-6">
+        <button onclick="clearOrder();">
+          Clear Order
+        </button>
+      </div>
+      <div class="col-sm-6">
+        <a href="index.html">
+        <button onclick="clearOrder();">
+          Cancel Order
+        </button>
+          </a>
+      </div>
+    </div>
+    <br>
+  </div>
 
  <!--
 This script places a badge on your repl's full-browser view back to your repl's cover page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green, teal, blue, blurple, magenta, pink!

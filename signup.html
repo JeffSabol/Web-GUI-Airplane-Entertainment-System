@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Declare Emergency
+    <title>Sign-Up
     </title>
+    <script src="script.js">
+    </script>
     <link href="style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
@@ -13,12 +15,6 @@
     </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
     </script>
-    <script src="declare-emergency.js">
-    </script>
-    <style> .row {
-      outline: none;
-      }
-    </style>
   </head>
   <body>
     <!--Main menu navbar-->
@@ -27,33 +23,35 @@
     <div id="nav-bar">
     </div>
     <br>
-    <!--Start of Call Attendant-->
+    <!--Start of Sign up Form-->
     <div class="container main-menu">
       <button class="exit-button">
       </button>
-      <!-- Row for Call Attendant Text -->
+      <!-- Row for Sign up Form -->
       <div class="row">
         <div class="col-sm-12">
-          <h1 style="padding: 1em">Confirm Emergency?
+          <h1 style="padding: 1em">Please Sign up
           </h1>
+          <input type="text" class="form-control" name="username" placeholder="First Name" required="" a />
+          <input type="text" class="form-control" name="username" placeholder="Last Name" required=""  />
+          <input type="text" class="form-control" name="username" id="usernameInput"
+                 placeholder="Email Address" required="" autofocus="" />
+          <input type="password" class="form-control" name="password" id="passwordInput"
+                 placeholder="Password" required=""/>
+          <input type="password" class="form-control" name="confirmPassword" id="confirmPW" placeholder="Confirm Password" required=""/>
         </div>
       </div>
-      <!-- Row for Buttons -->
+      <!-- Row for Sign up -->
       <div class="row">
-        <div class="col-sm-6">
-          <button class="prompt-button yes" onclick="yes()">Yes
-          </button>
-        </div>
-        <div class="col-sm-6">
-          <button class="prompt-button no" onclick="no()">No
+        <div class="col-sm-12">
+          <br>
+          <button id="loginBtn" type="submit" onclick="signUp();">Sign up
           </button>
         </div>
       </div>
-      <!-- Row for Image -->
-      <div class="row" style="min-height: 1em;">
-        <div class="col-sm-12">
-          <img id="emergency-image" src="https://iili.io/hynRkl.md.png" alt="Emergency Symbol">
-        </div>
+      <!-- Row for Padding -->
+      <div class="row">
+        <br>
       </div>
       <!-- End of rows -->
     </div>

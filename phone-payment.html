@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Phone Payment</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="foodstyles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="phone.js"></script>
+</head>
+
+<body>
+  <!--Main menu navbar-->
+  <script src="nav-bar.js"></script>
+  <div id="nav-bar"></div>
+
+  <br>
+
+  <div class="container main-menu">
+    <button class="exit-button">
+      </button>
+    <h1 style="text-align:center">Phone Order Confirmation
+      <hr>
+    </h1>
+    <div class="row">
+      <div class="col-sm-6">
+        <p id="phoneOrderInfo" style="font-size: 1em; padding-left:1em;">
+          All phone calls made via the call GUI are accompanied by a <b>$2</b> charge. <br> <br>
+          If you'd like to make a call, please select a payment method on the right. <br> <br>
+          <span style="font-size:1.5em;font-style:bold;">Total: $2.00</span>
+        </p>
+      </div>
+      <div class="col-sm-6">
+        <a href="credit-card-payment.html">
+        <button onclick="putPhoneOrder('Credit Card')">
+          Pay with a Credit Card <br>
+          <img src="https://iili.io/j7hD6G.md.png"
+            alt="credit card image" width="125" height="100">
+        </button>
+          </a>
+        <br>
+        <br>
+        <a href="loyalty-points-payment.html">
+        <button onclick="putPhoneOrder('Loyalty Points')">
+          Pay with Loyalty Points <br>
+          <img
+            src="https://iili.io/j7hy8l.md.png"
+            alt="smiley image" width="125" height="100">
+        </button>
+        </a>
+        <br>
+        <br>
+        <button onclick="history.back();">
+          Return to Previous Page <br>
+          <img src="https://iili.io/j7jNS4.md.png" alt="return image" width="125"
+            height="100">
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!--Start of food menu-->
+</body>
+
+</html>

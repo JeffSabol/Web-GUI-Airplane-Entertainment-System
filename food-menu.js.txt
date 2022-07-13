@@ -1,0 +1,155 @@
+var foodOrder = {}; //global variable to store the foodOrder
+
+//const to hold the prices of all the items
+var prices = {
+  "Milk":3,
+  "Water":3,
+  "Cola":4,
+  "White Claw":5,
+  "Bud Light":5,
+  "Red Wine":7,
+  "Caesar Salad":4,
+  "Crab Soup":4,
+  "Bread Sticks":6,
+  "Club Sandwich":7,
+  "Pizza":8,
+  "Chicken Strips":7,
+  "Peanuts":2,
+  "Chips":2,
+  "Pretzels":2
+};
+
+$(document).ready(function() {
+  console.log("test");
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  if(JSONObject !== null){
+      var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+
+    //For each input box on the page
+    $(':input[type="number"]').each(function(){
+      var item = this.id;
+      //If the item is stored in the database, retrieve the quantity
+      if(JSObject[item] != null){
+      var quantity = JSObject[item].QTY;
+      this.value = quantity;
+        }
+    });
+  }
+
+  console.log("test");
+  
+  // var id = JSObject[id];
+
+  calcTotal();
+
+  $("#checkout").click(function() {
+    console.log("test");
+    window.location = "food-order-confirmation.html";
+  });
+
+});
+$(window).on("unload", function() {
+  localStorage.set("test", "test");
+  $(':input[type="number"]').each(function(){
+    var item = this.id;
+    var quantity = this.value;
+    foodOrder[item] = {ITEM:item, QTY:quantity};
+    var JSONObject = JSON.stringify(foodOrder);
+    localStorage.setItem("foodOrder", JSONObject); //foodOrder is the name of our database
+    console.log(foodOrder);
+    console.log(JSONObject);
+  });
+});
+
+function clearOrder(){
+
+  //Retrieve the current database from storage
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+
+  //Check each input item
+  $(':input[type="number"]').each(function(){
+    var item = this.id;
+    //Update the value on the GUI
+    this.value = 0;
+    //Update the value in the database
+    JSObject[item].QTY = this.value;
+  });
+
+  //Write the database back into storage
+  var JSONObject = JSON.stringify(JSObject); //Convert back to JSONObject
+  localStorage.setItem("foodOrder", JSONObject); //Store the database again
+
+  //change the displayed total to 0
+  var td = document.getElementById("totalDisplay");
+  td.innerHTML = "$" + 0;
+}
+
+function calcTotal(){
+  var total = 0;
+  $(':input[type="number"]').each(function(){
+    var item = this.id;
+    var quantity = this.value;
+    var price = prices[item];
+    var subtotal = quantity*price;
+    total += subtotal;
+  });
+  //totalDisplay
+  var td = document.getElementById("totalDisplay");
+  td.innerHTML = "$" + total;
+  console.log(total);
+}
+
+/*
+Function to calculate the total for the order and pass the it to the confirmation screen, where the 
+user can select the payment method. 
+*/
+/*
+$(document).ready(function(){
+  //Get the latest database information and save it in local storage
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+  
+  // convert object to key's array
+  const keys = Object.keys(JSObject);
+
+  var para = document.getElementById("foodOrderInfo");
+  var paraText = "";
+
+  // iterate over object
+  keys.forEach(function(){
+    var item = JSObject[key].ITEM;
+    var quantity = JSObject[key].QTY;
+    if(quantity > 0){
+      paraText = paraText + "Item: " + item + " Qty: " + quantity + "\n";
+    }
+    
+  });
+
+  para.innerHTML = paraText;
+});
+*/
+
+function checkout(){
+  //Get the latest database information and save it in local storage
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+  
+  // convert object to key's array
+  const keys = Object.keys(JSObject);
+
+  var para = document.getElementById("foodOrderInfo");
+  var paraText = "";
+
+  // iterate over object
+  keys.forEach(function(){
+    var item = JSObject[key].ITEM;
+    var quantity = JSObject[key].QTY;
+    if(quantity > 0){
+      paraText = paraText + "Item: " + item + " Qty: " + quantity + "\n";
+    }
+    
+  });
+
+  para.innerHTML = paraText;
+}

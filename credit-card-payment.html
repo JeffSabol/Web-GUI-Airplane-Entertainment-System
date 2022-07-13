@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Credit Card</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="foodstyles.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+  <script src="credit-card-payment.js"></script>
+  <style>
+    .cc{
+      text-align: left;
+      padding:2em;
+      border-right:5px solid black;
+      outline:none;
+    }
+    button{
+      width:8em;
+      height:5em;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Main menu navbar-->
+  <script src="nav-bar.js"></script>
+  <div id="nav-bar"></div>
+  <br>
+  <div class="container main-menu">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Credit Card Payment</h1>
+        <hr>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4 cc">
+        <h4>Order Summary:</h1>
+        <p id="orderSummary" style="font-size: 15px;"></p>
+        <h4>Order History:</h4>
+        <p id="orderHistory" style="font-size: 15px;"></p>
+      </div>
+      <div class="col-sm-5 cc">
+        Card Number: 
+        <input type="text" class="form-control" id="cardNumber" name="cardNumber" placeholder="Card Number" required="" autofocus="" style="width:90%;"/>
+        <br>
+        Name on Card:
+        <input type="text" class="form-control" id="cardHolderName" name="cardHolderName" placeholder="Card Holder Name" required="" autofocus="" style="width:90%;"/>
+        <br>
+        Expiration:
+        <input type="text" class="form-control" id="expiration" name="expiration" placeholder="Expiration Date" required="" autofocus="" style="width:90%;"/>
+        <p id="CCError" style="font-size: 1em; color:red;"></p>
+      </div>
+      <div id="purchaseButtons" class="col-sm-3 cc" style="border-right:none">
+          <button onclick="purchase();" style="background-color: lightgreen; width:100%;">CONFIRM PURCHASE</button>
+        <br>
+        <br>
+        <a>
+          <button id="#returnBtn"onclick="history.back();" style="background-color: red; width:100%;">RETURN</button>
+        </a>
+      </div>
+      
+      <div id="receiptButtons" class="col-sm-3 cc" style="border-right:none; display:none">
+        <input type="text" class="form-control" id="SMS" name="SMS" placeholder="Phone Number" required="" autofocus="" style="width:100%;"/>
+        <button onclick="textReceipt()" style="background-color: cyan; width:100%;">Send SMS Receipt</button>
+        <br>
+        <br>
+        <input type="text" class="form-control" id="email" name="email" placeholder="E-mail" required="" autofocus="" style="width:100%;"/>
+        <button onclick="emailReceipt()" style="background-color: orange; width:100%;">Send E-mail Receipt</button>
+        <br>
+        <br>
+        <br>
+        <a href="index.html"><button style="background-color: red; width:100%;">HOME</button></a>
+      </div>
+      </div>
+    </div>
+  </div>
+  
+</body>
+
+</html>

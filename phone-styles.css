@@ -1,0 +1,23 @@
+
+.number-button{
+  font-size:2em;
+  text-align:center;
+  width:33%;
+  display:inline-block;
+  margin:0 auto;
+  float:none;
+}
+
+.phoneRow{
+  display:inline-block;
+}
+
+#callingText{
+  font-size:2em;
+  text-align:center;
+  font-weight: bold;
+}
+
+#EndCall{
+  align-content: center;
+}

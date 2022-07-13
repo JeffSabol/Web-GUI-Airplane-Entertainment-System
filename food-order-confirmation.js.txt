@@ -1,0 +1,87 @@
+var orderTotal = 0;
+var orderString = "";
+
+//const to hold the prices of all the items
+var prices = {
+  "Milk":3,
+  "Water":3,
+  "Cola":4,
+  "White Claw":5,
+  "Bud Light":5,
+  "Red Wine":7,
+  "Caesar Salad":4,
+  "Crab Soup":4,
+  "Bread Sticks":6,
+  "Club Sandwich":7,
+  "Pizza":8,
+  "Chicken Strips":7,
+  "Peanuts":2,
+  "Chips":2,
+  "Pretzels":2
+};
+
+$(document).ready(function(){
+    if(document.location.href == "https://cmsc437-flight-gui.johnspann.repl.co/food-order-confirmation.html"){
+  //Get the latest database information and save it in local storage
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+  
+  // convert object to key's array
+  const keys = Object.keys(JSObject);
+
+  var para = document.getElementById("foodOrderInfo");
+  var paraText = "";
+  var total = 0;
+
+for(var i=0; i<keys.length; i++)
+    {
+      var item = keys[i];
+      var quantity = JSObject[item].QTY;
+      var price = prices[item];
+      var subtotal = price * quantity;
+      total += subtotal;
+      if(quantity > 0)
+      {
+      paraText = paraText +  item +" x " + quantity + " = $" + subtotal +"<br />";
+      }
+    }
+  paraText += "<b> " +"Total: $" + total + "</b>" + "<br />";
+
+  if(total == 0){
+    para.innerHTML = "Cart is empty!\n";
+    history.back();
+  }
+
+  //For sending information to the payment pages
+  orderTotal = total;
+  orderString = paraText;
+
+  para.innerHTML = paraText;
+    }
+});
+
+/*
+Function to update the global database object called orders
+Each orders object looks like this: orders[orderNumber] = {DESC:description, COST:cost, METHOD:method};
+*/
+function addOrder(method){
+  //Increment the global variable orderNumber. This will be the id used to search for the order
+
+  //Get the latest database information and save it in local storage
+  var JSONObject = localStorage.getItem("foodOrder"); //JSONObject is a string
+  var JSObject = JSON.parse(JSONObject); //parse converts strings back to key-values
+
+  var ordNum = localStorage.getItem("orderNumber");
+  
+  ordNum++;
+  var orderID = ordNum;
+  var orderTotalCost = orderTotal;
+  var orderStringtoPrint = "FOOD: <br>" + orderString;
+  var paymentMethod = method;
+  orders[orderID] = {DESC:orderStringtoPrint, COST:orderTotalCost, METHOD:paymentMethod};
+  var JSONObject = JSON.stringify(orders);
+  localStorage.setItem("orders", JSONObject); //orders is the name of our database
+  localStorage.setItem("orderNumber", ordNum)
+  console.log(orders);
+  console.log(JSONObject);
+}

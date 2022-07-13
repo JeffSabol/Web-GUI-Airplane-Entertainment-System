@@ -1,52 +1,90 @@
 html, body {
-    height: 100%;
-    width: 100%;
-  }
+  height: 100%;
+  width: 100%;
+}
+
+.navbar-nav {
+  float:none;
+  margin:0 auto;
+  display: block;
+  text-align: center;
+}
+
+.navbar-nav > li {
+  display: inline-block;
+  float:none;
+  border-color: gray;
+  border-style: solid;
+}
+
+.navbar-brand{
+  border-color: gray;
+  border-style: solid;
+  padding: 1em;
+}
+
+.main-menu{
+  border-width: 0.25em;
+  border-color:black;
+  border-style: solid;
+  padding-top: 1em;
+  position: relative;
+}
+
+.row{
+  text-align: center;
+  /*outline: 1px solid gray;*/
+  font-size: 24px;
+}
+
+.col-sm-4{
+  outline: 1px solid gray;
+}
+
+img{
+  padding:5px;
+}
+
+.mmLink{
+  color:black;
+}
+
+.flightInfoLabel{
+  text-align: left;
+  padding-left: 50em;
   
-  .navbar-nav {
-    float:none;
-    margin:0 auto;
-    display: block;
-    text-align: center;
-  }
-  
-  .navbar-nav > li {
-    display: inline-block;
-    float:none;
-    border-color: gray;
-    border-style: solid;
-  }
-  
-  .navbar-brand{
-    border-color: gray;
-    border-style: solid;
-    padding: 1em;
-  }
-  
-  .main-menu{
-    border-width: 0.25em;
-    border-color:black;
-    border-style: solid;
-    padding-top: 1em;
-  }
-  
-  .row{
-    text-align: center;
-    outline: 1px solid gray;
-    font-size: 24px;
-  }
-  
-  .col-sm-4{
-    outline: 1px solid gray;
-  }
-  
-  img{
-    padding:5px;
-  }
-  
-  .prompt-button {
-    float: center;
-    color: white;
-    font-size: 40px;
-    width: 60%;
-  }
+}
+
+.prompt-button {
+  float: center;
+  color: white;
+  font-size: 40px;
+  width: 60%;
+}
+
+#emergency-image {
+  float: center;
+  width: 40%;
+}
+
+.exit-button {
+  background-color: red;
+  border: none;
+  color: white;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2em;
+  width: 2em;
+}
+#flipped {
+  transform: scaleX(-1);
+}
+.form-control {
+  text-align: center;
+}
+#loginBtn {
+  background-color: #06DF15;
+  font-size: 40px;
+}

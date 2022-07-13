@@ -1,0 +1,51 @@
+.game-button {
+  border: none;
+  color: white;
+  height: 100%;
+  width: 90%;
+}
+
+.game-button:hover {
+  background-color: #000000;
+}
+
+.b1 {
+  background-color: #04d204;
+}
+
+.b2 {
+  background-color: #3670f7;
+}
+
+.b3 {
+  background-color: #ff9d14;
+}
+
+.b4 {
+  background-color: red;
+}
+
+.b5 {
+  background-color: #6e6e6e;
+}
+
+.b6 {
+  background-color: #ff0aff;
+}
+
+.game-button > img {
+  margin: 0.5em 0 0 0;
+  padding: 0;
+  width: 40%;
+}
+
+.game-button > p {
+  margin: 0;
+  padding: 0;
+}
+
+.game {
+    margin: 0.5em 0 0.5em 0;
+    padding: 0;
+    width: 90%;
+}

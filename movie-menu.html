@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Movie Menu</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="movie-menu.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="movie-menu.js"></script>
+  <style>
+    .row {
+      outline: none;
+    }
+    .col-sm-4 {
+      outline: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!--Main menu navbar-->
+  <script src="nav-bar.js"></script>
+  <div id="nav-bar"></div>
+
+  <br>
+
+  <!--Start of Content-->
+  <div class="container main-menu">
+    <button class="exit-button"></button>
+    <!-- Game Row 1 -->
+    <div class="row" style="margin-top: 1.2em;">
+      <!-- The Northman -->
+      <div class="col-sm-4">
+        <button class="movie-button  b1">
+          <img src="https://iili.io/jdfhga.md.png" alt="The Northman" width=150 height=225>
+          <p>The Northman</p>
+        </button>
+      </div>
+      <!-- Top Gun -->
+      <div class="col-sm-4">
+        <button class="movie-button b2">
+          <img src="https://iili.io/jdfyru.png" alt="Top Gun: Maverick 2022" width=150 height=225>
+          <p id="topgun">Top Gun: Maverick</p>
+        </button>
+      </div>
+      <!-- Beavis and Butthead -->
+      <div class="col-sm-4">
+        <button class="movie-button  b3">
+          <img src="https://iili.io/jdqfLP.png" alt="Beavis and Butthead Do America" width=150, height="225">
+          <p id="beavis">Beavis and Butthead</p>
+        </button>
+      </div>
+    </div>
+    <!-- Game Row 2 -->
+    <div class="row" style="margin-top: .7em;">
+      <!-- Hustle -->
+      <div class="col-sm-4">
+        <button class="movie-button b4">
+          <img src="https://iili.io/jdqFIV.png" alt="Hustle 2022" width=150 height=225>
+          <p>Hustle</p>
+        </button>
+      </div>
+      <!-- Lightyear -->
+      <div class="col-sm-4">
+        <button class="movie-button b5">
+          <img src="https://iili.io/jdftXS.png" alt="Lightyear 2022" width=150 height=225>
+          <p>Light Year</p>
+        </button>
+      </div>
+      <!-- The Batman -->
+      <div class="col-sm-4">
+        <button class="movie-button b6">
+          <img src="https://iili.io/jdqBB1.md.png" alt="The Batman 2022" width=150 height="225">
+          <p>The Batman</p>
+        </button>
+      </div>
+    </div>
+    <!-- Padding -->
+    <div class="row" style="min-height: 0.5em;"></div>
+  </div>
+</body>
+
+
+
+</html>
