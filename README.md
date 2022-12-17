@@ -10,3 +10,4 @@ So, if you move away from a page, then go to that same page, data will not be lo
 [![HxqHKe1.md.png](https://iili.io/HxqHKe1.md.png)](https://freeimage.host/i/HxqHKe1)
 [![HxqdrWg.md.png](https://iili.io/HxqdrWg.md.png)](https://freeimage.host/i/HxqdrWg)
 [![Hxqd4sa.md.png](https://iili.io/Hxqd4sa.md.png)](https://freeimage.host/i/Hxqd4sa)
+[![Hxq2z1j.md.png](https://iili.io/Hxq2z1j.md.png)](https://freeimage.host/i/Hxq2z1j)
